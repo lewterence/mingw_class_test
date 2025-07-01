@@ -16,8 +16,15 @@ int main() {
   std::cout << myObj.getMyInt() << "\n";
   std::cout << mySecondObj.getMyInt() << "\n";
 
-  std::cout << "Testing parameterized constructor" << "\n";
+  std::cout << "\n" << "Testing parameterized constructor" << "\n";
   MyClass myThirdObj(40); // Test parameterized constructor
+
+  std::cout << "\n" << "Testing move constructor" << "\n";
+  MyClass moveObj1(42);
+  std::cout << "myInt: " << moveObj1.getMyInt() << "\n";
+  MyClass moveObj2 = std::move(moveObj1);
+  std::cout << "myInt: " << moveObj2.getMyInt() << "\n";
+  std::cout << "myInt: " << moveObj1.getMyInt() << "\n";
 
   return 0;
 }
