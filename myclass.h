@@ -23,7 +23,7 @@ class MyClass {
 	// consturctors transfer the ownership of the already existing object to the new object
 	// without making any copy of it, it makes the new object point to the already existing
 	// object in the heap memory.
-	MyClass (MyClass&&);
+	MyClass (MyClass&&) noexcept;
 
     // Destructor
     ~MyClass();

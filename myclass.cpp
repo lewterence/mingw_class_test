@@ -37,7 +37,7 @@ MyClass::MyClass(const MyClass& other) : myInt(new int(*other.myInt)) {
 // consturctors transfer the ownership of the already existing object to the new object
 // without making any copy of it, it makes the new object point to the already existing
 // object in the heap memory.
-MyClass::MyClass (MyClass&& obj) {
+MyClass::MyClass (MyClass&& obj) noexcept {
   myInt = obj.myInt;  // Assign the address from obj.myInt to myInt
   // Nulling out the pointer to the temporary data
   obj.myInt = nullptr;
