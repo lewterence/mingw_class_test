@@ -58,6 +58,22 @@ MyClass& MyClass::operator=(const MyClass& other) {
   return *this;
 }
 
+// Move assignment operator
+MyClass& MyClass::operator=(MyClass&& other) noexcept {
+
+  if (this != &other) {
+    // Release our current resources
+    delete myInt;
+    // Take resources from 'other' and make them our own
+    myInt = other.myInt;
+    // Reset 'other' to a valid but unspecified state
+    other.myInt = nullptr;
+  }
+
+  std::cout << "Move assignment operator called" << "\n";
+  return *this;
+}
+
 // Getter
 int MyClass::getMyInt() const {
   if (myInt) {

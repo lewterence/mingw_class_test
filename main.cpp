@@ -33,6 +33,11 @@ int main() {
   std::cout << mySecondObj.getMyInt() << "\n";
   std::cout << myThirdObj.getMyInt() << "\n";
 
+  std::cout << "\n" << "Testing move assignment operator" << "\n";
+  mySecondObj = std::move(myThirdObj);
+  std::cout << mySecondObj.getMyInt() << "\n";
+  std::cout << myThirdObj.getMyInt() << "\n";
+
   return 0;
 }
 

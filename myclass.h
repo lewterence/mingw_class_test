@@ -31,6 +31,9 @@ class MyClass {
     // Copy assignment operator
     MyClass& operator=(const MyClass& other);
 
+    // Move assignment operator
+    MyClass& operator=(MyClass&& other) noexcept;
+
     // Getter
     int getMyInt() const;
 
