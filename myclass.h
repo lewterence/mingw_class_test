@@ -28,6 +28,9 @@ class MyClass {
     // Destructor
     ~MyClass();
 
+    // Copy assignment operator
+    MyClass& operator=(const MyClass& other);
+
     // Getter
     int getMyInt() const;
 

@@ -26,6 +26,13 @@ int main() {
   std::cout << "myInt: " << moveObj2.getMyInt() << "\n";
   std::cout << "myInt: " << moveObj1.getMyInt() << "\n";
 
+  std::cout << "\n" << "Testing copy assignment operator" << "\n";
+  std::cout << mySecondObj.getMyInt() << "\n";
+  mySecondObj = myThirdObj;
+  myThirdObj.setMyInt(50);
+  std::cout << mySecondObj.getMyInt() << "\n";
+  std::cout << myThirdObj.getMyInt() << "\n";
+
   return 0;
 }
 

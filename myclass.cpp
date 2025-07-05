@@ -50,6 +50,14 @@ MyClass::~MyClass() {
   std::cout << "Destructor called" << "\n";
 }
 
+// Copy assignment operator
+MyClass& MyClass::operator=(const MyClass& other) {
+  delete myInt;  // Release existing resources
+  myInt = new int(*other.myInt);
+  std::cout << "Copy assignment operator called" << "\n";
+  return *this;
+}
+
 // Getter
 int MyClass::getMyInt() const {
   if (myInt) {
