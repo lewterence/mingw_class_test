@@ -38,6 +38,15 @@ int main() {
   std::cout << mySecondObj.getMyInt() << "\n";
   std::cout << myThirdObj.getMyInt() << "\n";
 
+  std::cout << "\n" << "Testing operator<" << "\n";
+  std::cout << myObj.getMyInt() << "\n";
+  std::cout << mySecondObj.getMyInt() << "\n";
+  std::cout << "myObj < mySecondObj = " << (myObj < mySecondObj) << "\n";
+  std::cout << "mySecondObj < myObj = " << (mySecondObj < myObj) << "\n";
+  std::cout << "myObj < myObj = " << (myObj < myObj) << "\n";
+  std::cout << "myObj < 75 = " << (myObj < 75) << "\n";
+  std::cout << "75 < myObj = " << (75 < myObj) << "\n";
+
   return 0;
 }
 

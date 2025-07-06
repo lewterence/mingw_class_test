@@ -34,6 +34,9 @@ class MyClass {
     // Move assignment operator
     MyClass& operator=(MyClass&& other) noexcept;
 
+    // Operator <
+    friend bool operator<(const MyClass& m1, const MyClass& m2);
+
     // Getter
     int getMyInt() const;
 
