@@ -80,6 +80,12 @@ bool operator<(const MyClass& m1, const MyClass& m2) {
   return *m1.myInt < *m2.myInt;
 }
 
+// Operator ==
+// This is a non-member friend function.
+bool operator==(const MyClass& m1, const MyClass& m2) {
+  return *m1.myInt == *m2.myInt;
+}
+
 // Getter
 int MyClass::getMyInt() const {
   if (myInt) {
