@@ -1,5 +1,4 @@
-#ifndef MYCLASS_H
-#define MYCLASS_H
+#pragma once
 
 class MyClass {
   public:
@@ -49,5 +48,3 @@ class MyClass {
   private:
     int* myInt;  // Pointer to dynamically allocated memory
 };
-
-#endif
