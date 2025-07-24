@@ -101,3 +101,13 @@ int MyClass::getMyInt() const {
 void MyClass::setMyInt (int n) {
   *myInt = n;
 }
+
+// Hash specialization implementation
+// std::size_t - Return type of the hash function - an unsigned integral type for hash values
+// std::hash<MyClass>::operator() - We're defining the function that was declared in the specialization
+// (const MyClass& p) const - Takes a constant reference to a MyClass, and doesn't modify its state
+// Placement Outside the Class: You define this operator outside the class because we're implementing a method of a template specialization for std::hash, not a member function of MyClass.
+std::size_t std::hash<MyClass>::operator()(const MyClass& p) const {
+  std::size_t h1 = std::hash<int>{}(p.getMyInt());           // Call the default hash function for int
+  return h1;
+}

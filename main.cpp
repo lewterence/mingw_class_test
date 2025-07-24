@@ -2,6 +2,8 @@
 // g++ -c main.cpp
 // g++ -o class_test myclass.o main.o
 #include <iostream>
+#include <functional>
+#include <unordered_set>
 #include "myclass.h"
 
 // Function taking an object by value (triggers copy constructor)
@@ -54,6 +56,17 @@ int main() {
   std::cout << "myObj == myObj = " << (myObj == myObj) << "\n";
   std::cout << "myObj == 75 = " << (myObj == 75) << "\n";
   std::cout << "12 == myObj = " << (12 == myObj) << "\n";
+
+  std::cout << "\n" << "Testing specialization of std::hash" << "\n";
+  std::unordered_set<MyClass> numbers_unordered_set;
+
+  numbers_unordered_set.insert(MyClass(1));
+  numbers_unordered_set.insert(MyClass(9));
+  numbers_unordered_set.insert(MyClass(1)); // duplicate won't be added
+
+  for (const auto& number : numbers_unordered_set) {
+    std::cout << number.getMyInt() << "\n";
+  }
 
   return 0;
 }
