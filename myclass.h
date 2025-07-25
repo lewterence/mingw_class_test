@@ -1,5 +1,4 @@
-#ifndef MYCLASS_H
-#define MYCLASS_H
+#pragma once
 
 class MyClass {
   public:
@@ -50,4 +49,13 @@ class MyClass {
     int* myInt;  // Pointer to dynamically allocated memory
 };
 
-#endif
+// Specialization of the std::hash template for our MyClass class
+namespace std {  // Working inside the standard library's namespace
+  template <>  // This is an explicit specilization - no need for template parameters
+  struct hash<MyClass> {  // Specializes the std::hash struct for our custom MyClass type
+      std::size_t operator()(const MyClass& p) const;  // Define how to compute the hash of a MyClass object
+  };
+}
+/* From Copilot:
+Normally, modifying the std namespace is discouraged, but the C++ Standard explicitly allows specializations of standard templates like std::hash for user-defined types—as long as the specialization is well-formed and doesn’t break rules. This enables your class to work seamlessly with hash-based containers like std::unordered_map and std::unordered_set.
+*/
