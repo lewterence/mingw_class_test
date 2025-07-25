@@ -1,5 +1,6 @@
 // g++ -c myclass.cpp
 #include <iostream>
+#include <functional>  // Required for std::hash
 #include "myclass.h"
 
 // Default constructor
