@@ -2,7 +2,6 @@
 // g++ -c main.cpp
 // g++ -o class_test myclass.o main.o
 #include <iostream>
-#include <functional>
 #include <unordered_set>
 #include "myclass.h"
 
